@@ -22,4 +22,10 @@ Then /I should see all the movies/ do
   Movie.all.each do |movie|
     step %{I should see "#{movie.title}"}
   end
+  
+end
+
+Then(/^the director of "([^"]*)" should be "([^"]*)"$/) do |arg1, arg2|
+  expect(page).to have_content(arg1)
+  expect(page).to have_content("Director: #{arg2}")  
 end

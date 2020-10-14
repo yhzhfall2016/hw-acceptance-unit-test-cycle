@@ -1,0 +1,8 @@
+-# in app/views/movies/same_director_movies.html.haml
+%table
+  %tbody
+    -@movies.each do |movie|
+      %tr
+        %td= movie.title
+
+= link_to 'Back to movie list', movies_path
